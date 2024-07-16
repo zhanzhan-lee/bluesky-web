@@ -17,11 +17,15 @@ nav a {
 .nav-logo {
   width: 80px; /* Adjust the size as needed */
   height: auto; /* Maintain the aspect ratio */
-  padding: 0px 10px;
+  padding: 10px 10px;
 }
 
 .elements-default {
   padding: 11px 5px;
+}
+
+.elements-default-login {
+  padding: 20px 9px;
 }
 
 .links-container {
@@ -34,7 +38,7 @@ nav a {
 /* Expanded navigation bar styles */
 .nav-expanded {
   display: flex;
-  height: 100px; /* Height of the expanded navbar */
+  height: 110px; /* Height of the expanded navbar */
   justify-content: flex-start;
   padding: 10px;
   background-color: #124494;
@@ -50,7 +54,7 @@ nav a {
 /* Collapsed navigation bar styles */
 .nav-collapsed {
   display: flex;
-  height: 60px; /* Height of the collapsed navbar */
+  height: 80px; /* Height of the collapsed navbar */
   justify-content: flex-start;
   padding: 10px;
   background-color: #124494;
@@ -85,6 +89,7 @@ main {
   flex: 1;
   outline: none;
   font-size: 17px;
+  
   flex: 1;
 }
 
@@ -94,8 +99,6 @@ main {
   background-color: #FBA920; /* Background color for the button */
   color: white;
   font-size: 17px;
-  border: none;
- 
   border-radius: 0 5px 5px 0; /* Rounded corners on the right side */
   cursor: pointer;
 }
@@ -116,7 +119,6 @@ button {
 .button-details {
   vertical-align: middle;
   padding: 25px 5px;
-  
 }
 
 button:focus {
