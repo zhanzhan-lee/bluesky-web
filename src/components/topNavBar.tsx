@@ -10,7 +10,6 @@ const NavBar: React.FC = () => {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const { user } = useContext(UserContext);
 
-
   useEffect(() => {
     const handleScroll = () => {
       setNavExpend(window.scrollY === 0);
@@ -67,7 +66,7 @@ const NavBar: React.FC = () => {
             </button>
           </form>
           <div className="flex items-center space-x-4">
-            <Link href="/login">
+            <Link href="/cart">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" className="text-white" viewBox="0 0 16 16">
                 <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
               </svg>
@@ -85,17 +84,19 @@ const NavBar: React.FC = () => {
               )}  
             </div>
           </div>
-          {navExpend && (
-            <div className="fixed top-16 right-0 bg-blue-800 w-full p-4 transition-transform duration-300">
-              <div className="flex items-center space-x-4">
-                <Link href="/download" className="">Download</Link>
-                <Link href="/blog" className="">Blog</Link>
-
-              </div>
-            </div>
-          )}
         </div>
       </nav>
+      <div className={`fixed top-16 right-0 bg-blue-800 w-full p-4 transition-transform duration-300 ${navExpend ? 'translate-y-0' : '-translate-y-full'}`}>
+        <div className="flex items-center space-x-4">
+          <Link href="/download" className="text-white">Download</Link>
+          <Link href="/blog" className="text-white">test-1</Link>
+          <Link href="/blog" className="text-white">test-2</Link>
+          <Link href="/blog" className="text-white">test-3</Link>
+          <Link href="/blog" className="text-white">test-4</Link>
+          <Link href="/blog" className="text-white">test-5</Link>
+          <Link href="/blog" className="text-white">test-6</Link>
+        </div>
+      </div>
       <LoginSidebar isOpen={isLoginOpen} onClose={handleLoginClose} />
     </>
   );

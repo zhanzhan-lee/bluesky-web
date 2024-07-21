@@ -5,24 +5,25 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { loadStripe } from '@stripe/stripe-js';
+import { useCart } from '@contexts/CartContext';
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
 
 const CheckoutPage = () => {
-  const [quantity, setQuantity] = useState(1);
+  const { state } = useCart();
   const [customerEmail, setCustomerEmail] = useState('');
   const router = useRouter();
 
   const handleCheckout = async (event: React.FormEvent) => {
     event.preventDefault();
-    
+
     const response = await fetch('/api/create-checkout-session', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        quantity,
+        items: state.items,
         customerEmail,
       }),
     });
@@ -33,6 +34,10 @@ const CheckoutPage = () => {
     if (error) {
       console.error("Stripe error:", error.message);
     }
+  };
+
+  const calculateTotal = () => {
+    return state.items.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
   };
 
   return (
@@ -53,18 +58,7 @@ const CheckoutPage = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="quantity">
-            Quantity
-          </label>
-          <input
-            id="quantity"
-            type="number"
-            value={quantity}
-            onChange={(e) => setQuantity(parseInt(e.target.value))}
-            min="1"
-            required
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          />
+          <p className="text-gray-700 text-sm font-bold mb-2">Total: ${calculateTotal()}</p>
         </div>
         <button
           type="submit"

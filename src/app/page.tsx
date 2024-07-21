@@ -1,61 +1,13 @@
-// src/app/page.tsx
-import Link from 'next/link';
+import React from 'react';
+import ProductList from '@components/productList-1';
 
-export default function HomePage() {
-
+const HomePage: React.FC = () => {
   return (
     <div>
-      <h1>TEST</h1>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <p>|</p>
-      <Link href="/download">前往下载页面</Link>
+      <h1 className="text-2xl font-bold mb-4">Products</h1>
+      <ProductList />
     </div>
   );
-}
+};
+
+export default HomePage;

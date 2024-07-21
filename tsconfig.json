@@ -23,7 +23,9 @@
       "@styles/*": ["./src/styles/*"],
       "@contexts/*": ["./src/contexts/*"],
       "@api/*": ["./src/app/api/*"],
-    }
+      "@sanity/*": ["./src/sanity/*"],
+    },
+    "target": "ES2017"
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
