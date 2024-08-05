@@ -35,7 +35,6 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-
 my-next-app
 ├── node_modules
 ├── src
@@ -57,3 +56,5 @@ my-next-app
 ├── .gitignore
 ├── package.json
 └── README.md
+
+
