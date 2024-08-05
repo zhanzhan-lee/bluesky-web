@@ -57,33 +57,3 @@ my-next-app
 ├── .gitignore
 ├── package.json
 └── README.md
-```mermaid
-graph TD
-    A[User Login] --> B[Enter Username and Password]
-    B --> C{Authenticate User}
-    C -->|Success| D[Navigate to Data Upload Page]
-    C -->|Fail| A[User Login]
-    D --> E[Select and Upload GTFS Data File]
-    E --> F{Receive and Process File}
-    F -->|Success| G[Navigate to Data Filter Page]
-    F -->|Fail| D[Select and Upload GTFS Data File]
-    G --> H[Set Filter Criteria]
-    H --> I[Submit Filter Criteria]
-    I --> J{Process and Return Filtered Data}
-    J --> K[View Filtered Route Data]
-    K --> L[Click on a Route to See Details]
-    L --> M[Display Route Visualization and Details]
-    M --> N[Choose Export Format]
-    N --> O[Submit Export Request]
-    O --> P{Generate and Provide Export File}
-    P --> Q[Download Exported File]
-    Q --> R[Navigate to Path Search Page]
-    R --> S[Enter Starting and Ending Locations]
-    S --> T[Submit Path Query Request]
-    T --> U{Calculate Shortest Path and Return Results}
-    U --> V[View Path Search Results]
-    V --> W[Choose to Re-query or Adjust Filters]
-    W --> R[Navigate to Path Search Page]
-
-
-```
